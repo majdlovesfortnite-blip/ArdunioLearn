@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ArduinoPath</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>ArduinoPath</h1>
+    <button id="logout" hidden>Log out</button>
+  </header>
+
+  <main>
+    <section id="auth" hidden>
+      <h2 id="auth-title">Log in</h2>
+      <form id="auth-form">
+        <label>Email <input name="email" type="email" required autocomplete="email"></label>
+        <label>Password <input name="password" type="password" required autocomplete="current-password"></label>
+        <button type="submit" id="auth-submit">Log in</button>
+      </form>
+      <p><a href="#" id="toggle-auth">Need an account? Sign up</a></p>
+      <p id="auth-error" class="error" role="alert"></p>
+    </section>
+
+    <section id="path" hidden>
+      <h2>Your path</h2>
+      <ul id="lesson-list"></ul>
+    </section>
+
+    <section id="lesson" hidden>
+      <a href="#" id="back">← Back to path</a>
+      <h2 id="lesson-title"></h2>
+      <p id="lesson-text"></p>
+      <textarea id="editor" spellcheck="false"></textarea>
+      <div class="row">
+        <button id="compile">Compile</button>
+        <button id="complete">Mark complete</button>
+      </div>
+      <pre id="output"></pre>
+      <h3>See it run</h3>
+      <iframe id="sim" title="Arduino simulator" loading="lazy"></iframe>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
